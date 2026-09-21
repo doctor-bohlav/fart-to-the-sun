@@ -2,6 +2,10 @@
 
 A complete, dependency-free HTML/JavaScript WebGL arcade adventure. Captain Toot travels from Earth to Gassius, Hive Nine and Cinder, then reaches the Sun to win.
 
+## Made by two young creators
+
+This game was entirely made by my 7-year-old twin daughters, with absolutely minimal supervision from their dad. The idea, story, characters, bosses, mechanics, and gloriously gassy sense of humor are theirs.
+
 ## Play
 
 Open `index.html` in a modern browser, or run:
