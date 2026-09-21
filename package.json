@@ -1,0 +1,7 @@
+{
+  "name": "fart-to-the-sun",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A bean-powered, dependency-free WebGL space adventure.",
+  "scripts": { "start": "node server.cjs", "test": "node --test tests/*.test.cjs", "check": "node --check game.js && node --check renderer.js && node --check app.js" }
+}
