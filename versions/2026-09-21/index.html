@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101322">
+  <meta name="description" content="One small fart. One giant leap. A bean-powered WebGL adventure to the Sun.">
+  <title>Fart to the Sun — A bean-powered space adventure</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23c8f36a'/%3E%3Ctext x='9' y='47' font-size='43'%3E🫘%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="universe" aria-label="WebGL space adventure"></canvas>
+  <div class="screen-grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" id="brand" aria-label="Fart to the Sun home"><span class="brand-symbol">✳</span><span>FART TO<br>THE SUN<span class="brand-dot">.</span></span></a>
+    <div class="top-center"><span class="status-dot"></span><span id="status-text">AN INTERPLANETARY BAD IDEA</span></div>
+    <div class="top-actions"><button class="icon-button" id="sound" aria-label="Enable sound" title="Toggle sound (M)"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4zM16 9l5 6m0-6-5 6"/></svg></button><button class="icon-button" id="help" aria-label="How to play" title="How to play">?</button><button class="icon-button hidden" id="pause" aria-label="Pause game" title="Pause (Esc)">Ⅱ</button></div>
+  </header>
+
+  <main id="menu" class="menu">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="tiny-star">✦</span> SPACE. BEANS. QUESTIONABLE PROPULSION.</div>
+      <h1>ONE SMALL<br><span>FART.</span><br>ONE GIANT<br>LEAP<span class="green">.</span></h1>
+      <p>The Sun is calling. Your stomach is answering.<br>Planet-hop, battle cosmic weirdos, and let it rip.</p>
+      <div class="launch-row"><button class="primary" id="start">LET’S RIP <span>↗</span></button><button class="continue-button hidden" id="continue">Continue mission →</button></div>
+      <div class="free-note"><span class="bean-mini"></span> Beans are free. Your dignity is not.</div>
+    </div>
+    <div class="pilot-label"><span class="crosshair">＋</span><div>CAPTAIN TOOT<small>100% ORGANIC THRUST</small></div></div>
+    <div class="orbit-note"><span class="status-dot"></span> DESTINATION: THE SUN <span>↗</span></div>
+    <div class="mission-strip"><div class="mission-intro"><span>THE FLIGHT PLAN</span><strong>A very gassy odyssey</strong></div><div class="route" id="menu-route"></div><div class="mission-end">4 LEGS<br><span>1 VERY BRIGHT IDEA</span></div></div>
+    <div class="menu-foot"><span>BUILT ON BEANS. POWERED BY YOU.</span><span>WEBGL ARCADE <span class="green">✦</span> VOL. 01</span></div>
+  </main>
+
+  <section id="hud" class="hud hidden" aria-label="Game status">
+    <div class="hud-top"><div class="resource-panel"><div class="resource-label"><span>♥ SUIT INTEGRITY</span><b id="health-number">100</b></div><div class="meter health"><i id="health-bar"></i></div><div class="resource-label gas-label"><span>≋ FART POWER</span><b id="gas-number">100</b></div><div class="meter"><i id="gas-bar"></i></div></div><div class="destination-panel"><span id="leg-label">LEG 01 / 04</span><h2 id="destination">Gassius</h2><div class="travel-meter"><i id="travel-bar"></i></div></div><div class="inventory-panel"><span class="currency">✧ <b id="credits">0</b></span><span class="tnt-counter">TNT <b id="tnt-number">0</b><kbd>E</kbd></span><button id="beans-hud">🫘 Free beans <kbd>B</kbd></button></div></div>
+    <div id="boss-panel" class="boss-panel hidden"><div><span id="boss-tag">PLANET GUARDIAN</span><strong id="boss-name">SPACE SERPENT</strong><b id="boss-health"></b></div><div class="boss-meter"><i id="boss-bar"></i></div><p id="boss-tip"></p></div>
+    <div class="hud-bottom"><div class="objective"><span class="status-dot"></span><span id="objective">Fart your way to Gassius.</span></div><div class="control-legend"><span><kbd>WASD</kbd> Move</span><span><kbd>SPACE</kbd> Fart boost / stun</span><span><kbd>J</kbd> / click Fire</span><span><kbd>E</kbd> Throw TNT</span></div></div>
+  </section>
+
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <div id="modal-backdrop" class="modal-backdrop hidden">
+    <section id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"></section>
+  </div>
+  <div class="touch-controls hidden" id="touch-controls"><div class="dpad"><button data-key="arrowup" aria-label="Move up">↑</button><button data-key="arrowleft" aria-label="Move left">←</button><button data-key="arrowdown" aria-label="Move down">↓</button><button data-key="arrowright" aria-label="Move right">→</button></div><div class="touch-actions"><button data-key="e">TNT</button><button data-key="j">FIRE</button><button data-key=" ">FART</button></div></div>
+  <div id="webgl-error" class="fatal hidden"><h1>Your universe needs WebGL.</h1><p>Enable hardware acceleration in your browser, then reload to take off.</p></div>
+  <script src="game.js"></script><script src="renderer.js"></script><script src="app.js"></script>
+</body>
+</html>
